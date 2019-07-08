@@ -10,7 +10,7 @@ I was reading the liberated pixel style guide at [opengameart.org](http://lpc.op
 
 I found it on the internet archive but the site had been in various states of 404 for years. I'm pretty sure the creator still maintains a presence and publishes game related stuff so maybe he would like to know about this. Perhaps someone will tell him.
 
-Anyway, after hunting down the missing images in google cache I decided a github repo was the quickest way to assemble a simple recreation of the page and so I did, which was the previous `README.md.
+Anyway, after hunting down the missing images in google cache I decided a github repo was the quickest way to assemble a simple recreation of the page and so I did, which was the previous `README.md`.
 
 Following some links on the internet archive's copy of the page yielded better results but I think I will mirror a few more articles here for the sake of their interesting nature and to keep them alive.
 
