@@ -1,4 +1,4 @@
-# Making Dungeons Pretty Part 2
+# Making Dungeons Pretty Part I
 If your goals are more pragmatic than lofty, digging a random dungeon is relatively simple and straightforward. You can get something passable with only a few lines of code. However, if you want to take that map and use graphics to display it, just replacing the ASCII with equal tile graphics ends up creating a flat and boring map that likely looked better in ASCII, truth be told. 
 
 | ![Two pictures of the same thing](https://phoebe-g.github.io/mapmaker-musings/images/map01-ascii.png) | ![Two pictures of the same thing](https://phoebe-g.github.io/mapmaker-musings/images/map01-tiles.png) |
@@ -7,8 +7,8 @@ Below is a relatively simple technique to go from illustration A to illustration
 
 Though this "system" is mainly aimed at 2D map developers, which a strong focus on Roguelikes, it can be modified for other uses. 
 
-#    Model-View-Controller and You!
- At the heart of this concept is the old computer science standby, the Model-View-Controller. If you have ever programmed for a computer more modern than DOS, chances are that you've met the old MVC a dozen times over. It is literally the foundation of modern GUIs. 
+# Model-View-Controller and You!
+At the heart of this concept is the old computer science standby, the Model-View-Controller. If you have ever programmed for a computer more modern than DOS, chances are that you've met the old MVC a dozen times over. It is literally the foundation of modern GUIs. 
 
 If you aren't familiar with MVC, here's a quick overview. Basically it describes the decoupling of data (the model) with how that data is viewed (the view), using an intermediary (the controller) to convert one to the other. The classic example is a list of numbers which can be viewed as a spreadsheet and/or a pie graph. Same data, different views. With GUIs, most controls are considered views and it is usually up to you to write the controller to link data of your format into something the controls can see and manipulate. 
 
@@ -54,7 +54,7 @@ The center square represents the RLTileType that we have found, as in we are try
 
 The eight surrounding cells represent the expected tile type to be found in each neighboring cell. If even one of these doesn't match, the rule fails. Also note that there is a wildcard type (the ANY type) which will always match, regardless of what is in that cell, and the NOT Ceiling type, which will match every cell EXCEPT a ceiling. 
 
-#   RLTypeViewRule and RLTypeViewRuleSet
+# RLTypeViewRule and RLTypeViewRuleSet
 The RLTypeViewRule is extremely simple. In fact, it's just data. Doesn't even need to be a class, technically. It is just eight strings which represent the unique identifiers of neighboring RLTileTypes, along with ANY and NOT types. ANY can be considered to be the default value if unspecified (NULL string). Then it has the single integer which is the index into the tile graphics array.
 
 When a map cell is checked against a rule, the surrounding eight cells are checked against the the rule's identifiers for those cells. ANY always matches. NOT TYPEs match everything except the specified TYPE. Otherwise, the rule matches if the cell and the specified type are the same. If any one of the eight neighbors does not match, the whole rule fails.
