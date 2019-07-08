@@ -21,4 +21,4 @@ Following some links on the internet archive's copy of the page yielded better r
 ## October 2009
 
 - Oct 16th 2009 - [Making Dungeons Pretty, Part II](docs/Making-Dungeons-Pretty-Part-II)
-- Oct 25th 2009 - [Making Dungeons Pretty, Part I](docs/Making-Dungeons-Pretty-Part-I)
+- Oct 15th 2009 - [Making Dungeons Pretty, Part I](docs/Making-Dungeons-Pretty-Part-I)

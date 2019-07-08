@@ -1,7 +1,6 @@
 # Making Dungeons Pretty Part 2
 If your goals are more pragmatic than lofty, digging a random dungeon is relatively simple and straightforward. You can get something passable with only a few lines of code. However, if you want to take that map and use graphics to display it, just replacing the ASCII with equal tile graphics ends up creating a flat and boring map that likely looked better in ASCII, truth be told. 
 
-|=======================================================================================================|============================================================|
 | ![Two pictures of the same thing](https://phoebe-g.github.io/mapmaker-musings/images/map01-ascii.png) | ![Two pictures of the same thing](https://phoebe-g.github.io/mapmaker-musings/images/map01-tiles.png) |
 
 Below is a relatively simple technique to go from illustration A to illustration B procedurally - as in, it uses a series of rules based on neighboring cells to determine which tile graphic should go there. With it, all your graphics can feature smooth transitions, shadows, and pretty pictures. Incidentally, this technique has been tried and proven using the tiles from the Free Pixel Project dungeon tiles. 
