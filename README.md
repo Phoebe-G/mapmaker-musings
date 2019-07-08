@@ -6,7 +6,7 @@ I am not Sean Howard. I do not have explicit permission to publish this material
 
 -----
 ### My excuse
-I was reading the liberated pixel style guide at [opengameart.org](http://lpc.opengameart.org/static/lpc-style-guide/styleguide.html) and came across a link to [Making Dungeons Pretty, Part II](docs/Making Dungeons Pretty Part 2) which 404ed.
+I was reading the liberated pixel style guide at [opengameart.org](http://lpc.opengameart.org/static/lpc-style-guide/styleguide.html) and came across a link to [Making Dungeons Pretty, Part II](docs/Making-Dungeons-Pretty-Part-II) which 404ed.
 
 I found it on the internet archive but the site had been in various states of 404 for years. I'm pretty sure the creator still maintains a presence and publishes game related stuff so maybe he would like to know about this. Perhaps someone will tell him.
 
@@ -20,4 +20,4 @@ Following some links on the internet archive's copy of the page yielded better r
 
 ## October 2009
 
-- 10/16/09 - [Making Dungeons Pretty, Part II](docs/Making Dungeons Pretty Part 2)
+- 10/16/09 - [Making Dungeons Pretty, Part II](docs/Making-Dungeons-Pretty-Part-II)
