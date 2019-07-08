@@ -7,7 +7,7 @@ Below is a relatively simple technique to go from illustration A to illustration
 
 Though this "system" is mainly aimed at 2D map developers, which a strong focus on Roguelikes, it can be modified for other uses. 
 
-# Model-View-Controller and You!
+## Model-View-Controller and You!
 At the heart of this concept is the old computer science standby, the Model-View-Controller. If you have ever programmed for a computer more modern than DOS, chances are that you've met the old MVC a dozen times over. It is literally the foundation of modern GUIs. 
 
 If you aren't familiar with MVC, here's a quick overview. Basically it describes the decoupling of data (the model) with how that data is viewed (the view), using an intermediary (the controller) to convert one to the other. The classic example is a list of numbers which can be viewed as a spreadsheet and/or a pie graph. Same data, different views. With GUIs, most controls are considered views and it is usually up to you to write the controller to link data of your format into something the controls can see and manipulate. 
@@ -36,14 +36,14 @@ Though you CAN represent the model as an ASCII map, I recommend against it. It's
 For the purposes of this article, let's refer to the tile type object's class as RLTileType (the RL is for Roguelike - that's how I roll). 
 
 
-# RLTileType
+## RLTileType
 Probably the most gameplay-centric features of the RLTileType class are the permissions. For instance, can you walk on this tile type, does it block projectiles, can you drop items on it, can you see through it, how much damage do I take each turn I stand there, etc. Since this tutorial isn't about the gameplay aspects, I'm just going to gloss over this part and assume that you can figure out what to do with it.
 
 More importantly, each RLTileType requires a unique identifier. I, personally, chose a string with a unique name in it, like "FLOOR" or "WALL". You could use an ascii character for this, but at least use it as a string since you will be able to use it as an identifier in a hashtable or associative array (why this is important, I'll talk about soon). Personally, I kept the ascii character and a default graphic tile index as additional variables, mainly for quickie testing.
 
 You don't need to use unique instances of RLTileType for every cell. It is enough that all floor cells point to the same, immutable floor object. 
 
-# One Rule To Ring Them All
+## One Rule To Ring Them All
 The basic idea behind this system is that it is a series of matching rules. If the eight neighboring cells match a particular rule, then that rule returns an index into the tile graphic array. Here's an example: 
 
 ![](https://phoebe-g.github.io/mapmaker-musings/images/map01-rule.png)
@@ -54,7 +54,7 @@ The center square represents the RLTileType that we have found, as in we are try
 
 The eight surrounding cells represent the expected tile type to be found in each neighboring cell. If even one of these doesn't match, the rule fails. Also note that there is a wildcard type (the ANY type) which will always match, regardless of what is in that cell, and the NOT Ceiling type, which will match every cell EXCEPT a ceiling. 
 
-# RLTypeViewRule and RLTypeViewRuleSet
+## RLTypeViewRule and RLTypeViewRuleSet
 The RLTypeViewRule is extremely simple. In fact, it's just data. Doesn't even need to be a class, technically. It is just eight strings which represent the unique identifiers of neighboring RLTileTypes, along with ANY and NOT types. ANY can be considered to be the default value if unspecified (NULL string). Then it has the single integer which is the index into the tile graphics array.
 
 When a map cell is checked against a rule, the surrounding eight cells are checked against the the rule's identifiers for those cells. ANY always matches. NOT TYPEs match everything except the specified TYPE. Otherwise, the rule matches if the cell and the specified type are the same. If any one of the eight neighbors does not match, the whole rule fails.
@@ -63,7 +63,7 @@ All these RLTypeViewRules of a particular tile type are then collected into an o
 
 When trying to match, the ruleset will go through through the rules, in order, until it finds the first match. Then it returns the tile graphic index given to it by the matching rule. If no rules match, a default tile graphic index is returned. And that's pretty much it, except that you might want to wrap all of this up into one clean little class that hold all the rulesets togetherâ€¦ 
 
-# RLEnvironment
+## RLEnvironment
 The RLEnvironment is sort of the glue that holds everything together. It is basically everything you need to take a type map and turn it into a view map.
 
 At the most basic level, it is a dictionary of rulesets (organized by type) and the tileset in question. It also has the function for loading the rulesets from an XML file.
@@ -71,3 +71,9 @@ At the most basic level, it is a dictionary of rulesets (organized by type) and 
 For additional ASCII support, you can add a dictionary that will convert from ASCII symbols to RLTileTypes, as well as support functions for creating TypeMaps from AsciiMaps and vice versa.
 
 Finally, you have the functions which will actually enact the rules, creating a new ViewMap from an inputted TypeMap. I also recommend an update function, where you can pass an position (x,y) and a typeMap and get the tile graphics index of that location - for when a TypeMap changes and you need to update the ViewMap accordingly. 
+
+----
+
+Copyright 2009 Sean Howard. All rights reserved.
+
+Rescued from internet archive and google image cache in 2019.
