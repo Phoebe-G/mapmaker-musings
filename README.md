@@ -34,17 +34,17 @@ There are a few common patterns that will repeatedly crop up that you can save s
 The idea is that each pattern can build a specific set of rules if you pass it the needed tiles in a specific order. So if the Rug pattern requires 16 tiles, you can declare a ruleset a type of Rug and only supply those 16 integers that correspond to corners and whatnot. You can then add additional rules to override them if you choose (for instance, to introduce random variations). 
 
 - todo: image, caption: The Rug
-- ![The Rug](https://phoebe-g.github.io/mapmaker-musings/images/rug-325x155.jpg)
+- ![The Rug](https://phoebe-g.github.io/mapmaker-musings/images/rug-325%C3%97155.jpg)
 
  The Rug is a pattern which can be used to create any rectangular pattern down to a 1x1 rect using 16 different tiles. Due to the way the tiles are patterned, only rectangles can be properly modeled. 
 
 - todo: image, caption: The Fence
-- ![The Fence](https://phoebe-g.github.io/mapmaker-musings/images/fence-301x167.png)
+- ![The Fence](https://phoebe-g.github.io/mapmaker-musings/images/fence-301%C3%97167.png)
 
  Think of the fence as each tile being a fence post that is connected to one or more of its neighboring tiles. It also uses 16 tiles, like the Rug, but it can make odd shapes because it ignores inner corners. The main drawback of the Fence is that when you get a bunch of center tiles together, it doesn't look very natural (see illustration). 
 
 - todo: image, caption: The Blob
-- ![The Blob](https://phoebe-g.github.io/mapmaker-musings/images/blob-370x136.png)
+- ![The Blob](https://phoebe-g.github.io/mapmaker-musings/images/blob-370%C3%97136.png)
 
 The Blob is the most complex pattern there is, requiring a whopping 47 tiles to fully implement. However, it is the most versatile, capable of producing any connected shape you can imagine. The inner corners are what makes up the bulk of the differences.
 
